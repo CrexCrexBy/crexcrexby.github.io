@@ -1,0 +1,10 @@
+{
+	"useTabs": true,
+	"tabWidth": 4,
+	"semi": false,
+	"singleQuote": true,
+	"endOfLine": "crlf",
+	"trailingComma": "es5",
+	"trimTrailingWhitespace": true,
+	"normalizeMultipleNewlines": true
+}

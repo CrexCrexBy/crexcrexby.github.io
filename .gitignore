@@ -1,0 +1,38 @@
+# PhpStorm
+.idea/
+
+# VSCode
+.vscode/
+!.vscode/plop-templates/**/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+
+build/
+dist/
+node_modules/
+
+.env
+*.log
+package-lock.json
+
+# win
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# linux
+*~
+
+# mac os
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
