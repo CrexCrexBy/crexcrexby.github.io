@@ -11,10 +11,12 @@
 !.vscode/*.code-snippets
 *.code-workspace
 
-build
-dist
+build/
+dist/
 node_modules/
 
+.env
+*.log
 package-lock.json
 
 # win
