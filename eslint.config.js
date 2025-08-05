@@ -2,7 +2,7 @@ import js from "@eslint/js"
 import globals from "globals"
 import pluginReact from "eslint-plugin-react"
 import css from "@eslint/css"
-import { defineConfig } from "eslint/config"
+import { defineConfig, globalIgnores } from "eslint/config"
 import eslintPluginPrettier from "eslint-plugin-prettier"
 import eslintConfigPrettier from "eslint-config-prettier"
 
@@ -31,4 +31,5 @@ export default defineConfig([
 		language: "css/css",
 		extends: ["css/recommended"],
 	},
+	globalIgnores(["build/*", "dist/*", "node_modules/*", "plopfile.js"]),
 ])
