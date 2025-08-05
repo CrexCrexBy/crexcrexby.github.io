@@ -1,12 +1,13 @@
 {
 	"name": "my_portfolio",
+	"homepage": "https://crexcrexby.github.io/",
 	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "minista",
 		"build": "minista build",
 		"preview": "minista preview",
-		"deploy": "lint:fix && gh-pages -d build",
+		"deploy": "npm run build && gh-pages -d dist",
 		"lint:js": "eslint .",
 		"lint:js:fix": "eslint . --fix",
 		"lint:css": "stylelint \"**/*.css\"",
@@ -39,6 +40,7 @@
 		"stylelint-prettier": "^5.0.3"
 	},
 	"dependencies": {
-		"classnames": "^2.5.1"
+		"classnames": "^2.5.1",
+		"i18next": "^25.3.2"
 	}
 }

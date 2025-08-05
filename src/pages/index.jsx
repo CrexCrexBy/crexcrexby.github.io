@@ -1,10 +1,17 @@
+// src/pages/index.jsx
 import { Head } from "minista"
-import Button from "../components/Button"
 
-export default function () {
+export const metadata = {
+	title: "Моё портфолио",
+}
+
+export default function ({ url, title, children }) {
 	return (
 		<>
-			<Button></Button>
+			<Head htmlAttributes={{ lang: "ru" }}>
+				<title>{title}</title>
+			</Head>
+			<h1>{title}</h1>
 		</>
 	)
 }
