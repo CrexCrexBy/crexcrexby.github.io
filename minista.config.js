@@ -54,17 +54,12 @@ export default defineConfig({
 		},
 		partial: {
 			usePreact: false,
-			useIntersectionObserver: true,
+			useIntersectionObserver: false, // Отключаем частичную гидратацию
 			outName: "hydrate",
 			rootAttrSuffix: "partial-hydration",
 			rootValuePrefix: "ph",
 			rootDOMElement: "div",
 			rootStyle: { display: "contents" },
-			intersectionObserverOptions: {
-				root: null,
-				rootMargin: "0px",
-				thresholds: [0],
-			},
 		},
 	},
 	resolve: {
@@ -147,4 +142,17 @@ export default defineConfig({
 		},
 	},
 	vite: {},
+	// Добавляем секцию generate
+	generate: async () => {
+		const langs = ["en", "ru"]
+		const pages = []
+		for (const lang of langs) {
+			pages.push({
+				path: `/${lang}/index`,
+				component: "./src/pages/index.jsx",
+				data: { lang },
+			})
+		}
+		return pages
+	},
 })
