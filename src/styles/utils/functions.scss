@@ -8,6 +8,7 @@
 /// @param {Number} $min-breakpoint [640] - минимальный размер окна, на котором объект должен стать минимального размера
 /// @param {Number} $max-breakpoint [1024] - максимальный размер окна, на котором объект должен стать максимального размера
 /// @param {Boolean} $revers [false] - реверс изменения позволяет увеличить объект при уменьшении экрана и наоборот
+/// @param {Number} $round [2] - число знаков, до которого будут округлены высчитанные значения
 /// @param {String} $unit [vw] - единица измерения, отвечающая за направление расчета
 @function fluid(
 	$min-size,
@@ -15,6 +16,7 @@
 	$min-breakpoint: map.get(variable.$breakpoints, "xsmall"),
 	$max-breakpoint: map.get(variable.$breakpoints, "medium"),
 	$revers: false,
+	$round: 2,
 	$unit: vw
 ) {
 	@if $revers == true {
@@ -23,10 +25,13 @@
 		$max-breakpoint: $temp;
 	}
 	$slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
-	$slope-to-unit: round($slope * 100, 2);
-	$intercept-rem: round(px-to-rem($min-size - $slope * $min-breakpoint), 2);
-	$min-size-rem: round(px-to-rem($min-size), 2);
-	$max-size-rem: round(px-to-rem($max-size), 2);
+	$slope-to-unit: round($slope * 100, $round);
+	$intercept-rem: round(
+		px-to-rem($min-size - $slope * $min-breakpoint),
+		$round
+	);
+	$min-size-rem: round(px-to-rem($min-size), $round);
+	$max-size-rem: round(px-to-rem($max-size), $round);
 	@return clamp(
 		#{$min-size-rem},
 		#{$slope-to-unit}#{$unit} + #{$intercept-rem},
