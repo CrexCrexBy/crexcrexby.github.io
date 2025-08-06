@@ -7,7 +7,7 @@ export const metadata = {
 export default function ({ url, title, children }) {
 	return (
 		<>
-			<Head>
+			<Head htmlAttributes={{ lang: "en" }}>
 				<title>{title}</title>
 			</Head>
 			<h1>{title}</h1>
