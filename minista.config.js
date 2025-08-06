@@ -86,8 +86,10 @@ export default defineConfig({
 		},
 		preprocessorOptions: {
 			scss: {
-				additionalData: `@use "the-new-css-reset/css/reset";`,
-				api: "modern-compiler",
+				additionalData: `
+					
+				`,
+				silenceDeprecations: ["legacy-js-api"],
 			},
 			less: {},
 			stylus: {},

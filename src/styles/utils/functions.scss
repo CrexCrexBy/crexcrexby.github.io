@@ -16,7 +16,7 @@
 	$min-breakpoint: map.get(variable.$breakpoints, "xsmall"),
 	$max-breakpoint: map.get(variable.$breakpoints, "medium"),
 	$revers: false,
-	$round: 2,
+	$round: 4,
 	$unit: vw
 ) {
 	@if $revers == true {
