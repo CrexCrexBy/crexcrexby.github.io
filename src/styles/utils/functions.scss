@@ -18,10 +18,9 @@
 	$unit: vw
 ) {
 	@if $revers == true {
-		$revert-max-breakpoint: $min-breakpoint;
-		$revert-min-breakpoint: $max-breakpoint;
-		$min-breakpoint: $revert-max-breakpoint;
-		$max-breakpoint: $revert-min-breakpoint;
+		$temp: $min-breakpoint;
+		$min-breakpoint: $max-breakpoint;
+		$max-breakpoint: $temp;
 	}
 	$slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
 	$slope-to-unit: round($slope * 100, 2);
